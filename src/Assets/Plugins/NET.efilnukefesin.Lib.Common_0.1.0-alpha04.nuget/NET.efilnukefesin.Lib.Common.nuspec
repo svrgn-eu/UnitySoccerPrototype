@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NET.efilnukefesin.Lib.Common</id>
+    <version>0.1.0-alpha04</version>
+    <authors>efilnukefesin.NET</authors>
+    <description>Common libs for the use in different projects based on NET Standard 2.0</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NET.efilnukefesin.Lib.Common.Interfaces" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

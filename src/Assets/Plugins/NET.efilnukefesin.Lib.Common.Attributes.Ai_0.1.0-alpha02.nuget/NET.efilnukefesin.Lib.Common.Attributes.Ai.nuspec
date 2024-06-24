@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NET.efilnukefesin.Lib.Common.Attributes.Ai</id>
+    <version>0.1.0-alpha02</version>
+    <authors>efilnukefesin.NET</authors>
+    <description>Attributes for usage in Ai implementation</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

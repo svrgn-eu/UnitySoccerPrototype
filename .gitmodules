@@ -1,0 +1,6 @@
+[submodule "src/Assets/Base"]
+	path = src/Assets/Base
+	url = http://gitlab2.fritz.box/unity/libs/base.git
+[submodule "src/Assets/BaseEditor"]
+	path = src/Assets/BaseEditor
+	url = http://gitlab2.fritz.box/unity/libs/baseeditor.git

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NET.efilnukefesin.Lib.Common.Implementations.TextParsing</id>
+    <version>0.1.0-alpha02</version>
+    <authors>efilnukefesin.NET</authors>
+    <description>Implementations for text parsing methods and services.</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NET.efilnukefesin.Lib.Common.Interfaces.TextParsing" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+        <dependency id="NET.efilnukefesin.Lib.Common.Services" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

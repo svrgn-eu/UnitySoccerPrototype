@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NET.efilnukefesin.Lib.Common.Windows.Services</id>
+    <version>0.1.0-alpha04</version>
+    <authors>efilnukefesin.NET</authors>
+    <description>Specific Windows Platform implementations</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="NET.efilnukefesin.Lib.Common.Interfaces" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+        <dependency id="NET.efilnukefesin.Lib.Common.Services" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+        <dependency id="System.Management" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

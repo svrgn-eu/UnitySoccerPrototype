@@ -1,0 +1,2 @@
+rem "BagetDownloader/BagetDownloader.exe" -h http://baget.fritz.box:5555/v3/index.json -f NET.efilnukefesin.Lib.Common -t ../src/Assets/Plugins/
+"BagetDownloader/BagetDownloader.exe" -h http://baget.fritz.box:5555/v3/index.json -f NET.efilnukefesin.Lib.Common -t D:\\Dev\\Unity\\Soccer\\src\\Assets\\Plugins

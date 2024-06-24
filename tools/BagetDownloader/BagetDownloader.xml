@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+	<PinterestAPIKey>c0e9ace2a50aded7c4155ddccee5f6300907caf6</PinterestAPIKey>
+	<!--use api key from https://developers.pinterest.com/apps/-->
+	<PinterestAppID>1479844</PinterestAppID>
+	<PinterestBoardName>Lookup</PinterestBoardName>
+	<PinterestOAuthLocalCallbackAddress>http://localhost:8085/</PinterestOAuthLocalCallbackAddress>
+	<PinterestOAuthScopes>pins:read,pins:read_secret,user_accounts:read,boards:read,boards:read_secret,boards:write</PinterestOAuthScopes>
+	<OutputFolder>D:\\Temp\\Pinterest</OutputFolder>
+	<LastRefreshToken>none</LastRefreshToken>
+</Configuration>

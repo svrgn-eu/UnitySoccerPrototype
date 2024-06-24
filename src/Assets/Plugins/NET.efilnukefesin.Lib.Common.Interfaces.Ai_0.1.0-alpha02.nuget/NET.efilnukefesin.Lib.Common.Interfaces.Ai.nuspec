@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NET.efilnukefesin.Lib.Common.Interfaces.Ai</id>
+    <version>0.1.0-alpha02</version>
+    <authors>efilnukefesin.NET</authors>
+    <description>Specialized interfaces for Ai purposes based on NET Standard 2.0</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NET.efilnukefesin.Lib.Common.Interfaces" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+        <dependency id="NET.efilnukefesin.Lib.Common.Objects" version="0.1.0-alpha02" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

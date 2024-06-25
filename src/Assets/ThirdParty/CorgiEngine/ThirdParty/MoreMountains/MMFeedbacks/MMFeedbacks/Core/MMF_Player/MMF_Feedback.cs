@@ -341,11 +341,10 @@ namespace MoreMountains.Feedbacks
 			{
 				_requiresSetup = false;
 			}
-			if ((RequiredTargetText != _requiredTargetTextCached) || (RequiredTargetTextExtra != _requiredTargetTextCachedExtra))
+			if (RequiredTargetText != _requiredTargetTextCached)
 			{
-				_requiredTarget = RequiredTargetText == "" ? "" : "[" + RequiredTargetText + "]" + RequiredTargetTextExtra;
+				_requiredTarget = RequiredTargetText == "" ? "" : "[" + RequiredTargetText + "]";
 				_requiredTargetTextCached = RequiredTargetText;
-				_requiredTargetTextCachedExtra = RequiredTargetTextExtra;
 			}
 			
 			#endif
@@ -358,8 +357,6 @@ namespace MoreMountains.Feedbacks
 		public virtual string RequiresSetupText => "This feedback requires some additional setup.";
 		/// the text used to describe the required target
 		public virtual string RequiredTargetText => "";
-		/// the text used to describe the required target, if more info is needed
-		public virtual string RequiredTargetTextExtra => "";
 
 		/// <summary>
 		/// Override this method to determine if a feedback requires setup 
@@ -432,7 +429,6 @@ namespace MoreMountains.Feedbacks
 		protected float _totalDuration = 0f;
 		protected int _indexInOwnerFeedbackList = 0;
 		protected string _requiredTargetTextCached = ".";
-		protected string _requiredTargetTextCachedExtra = "";
 		protected float _repeatOffset = 0f;
 
 		#endregion Properties

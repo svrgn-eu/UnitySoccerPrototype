@@ -237,7 +237,6 @@ namespace MoreMountains.Feedbacks
 						{
 							_destinationPosition = GetPosition(DestinationPositionTransform);
 						}
-						if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 						_coroutine = Owner.StartCoroutine(MoveFromTo(AnimatePositionTarget, _initialPosition, _destinationPosition, FeedbackDuration, AnimatePositionTween));
 						break;
 					case Modes.AtoB:
@@ -245,7 +244,6 @@ namespace MoreMountains.Feedbacks
 						{
 							return;
 						}
-						if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 						_coroutine = Owner.StartCoroutine(MoveFromTo(AnimatePositionTarget, _workInitialPosition, _workDestinationPosition, FeedbackDuration, AnimatePositionTween));
 						break;
 					case Modes.AlongCurve:
@@ -258,7 +256,6 @@ namespace MoreMountains.Feedbacks
 						_remapCurveZero = RandomizeRemap ? Random.Range(RemapCurveZero, RemapCurveZeroAlt) : RemapCurveZero;
 						_remapCurveOne = RandomizeRemap ? Random.Range(RemapCurveOne, RemapCurveOneAlt) : RemapCurveOne;
 						
-						if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 						_coroutine = Owner.StartCoroutine(MoveAlongCurve(AnimatePositionTarget, _workInitialPosition, FeedbackDuration, intensityMultiplier));
 						break;
 				}                    

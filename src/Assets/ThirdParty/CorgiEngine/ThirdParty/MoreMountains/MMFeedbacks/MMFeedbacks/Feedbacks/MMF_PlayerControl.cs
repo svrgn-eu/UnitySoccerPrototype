@@ -24,28 +24,6 @@ namespace MoreMountains.Feedbacks
 		
 		public override bool HasChannel => false;
 
-		public override float FeedbackDuration
-		{
-			get
-			{
-				if ((Mode == Modes.PlayFeedbacks) && (TargetPlayers.Count > 0))
-				{
-					float totalDuration = 0f;
-					foreach (MMF_Player player in TargetPlayers)
-					{
-						if (player != null)
-						{
-							totalDuration += player.TotalDuration;	
-						}
-					}
-
-					return totalDuration;
-				}
-
-				return 0f;
-			}
-		}
-
 		public override bool IsPlaying
 		{
 			get

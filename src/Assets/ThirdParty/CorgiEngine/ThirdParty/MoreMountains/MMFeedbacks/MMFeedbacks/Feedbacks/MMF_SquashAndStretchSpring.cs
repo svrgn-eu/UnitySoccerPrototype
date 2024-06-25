@@ -127,7 +127,10 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
 
-			if (_coroutine != null)	{ Owner.StopCoroutine(_coroutine); }
+			if (_coroutine != null)
+			{
+				Owner.StopCoroutine(_coroutine);
+			}
 
 			switch (Mode)
 			{

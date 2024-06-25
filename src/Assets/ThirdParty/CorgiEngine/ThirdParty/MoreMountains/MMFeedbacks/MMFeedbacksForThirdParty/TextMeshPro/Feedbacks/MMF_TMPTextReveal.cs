@@ -228,7 +228,6 @@ namespace MoreMountains.Feedbacks
 				TargetTMPText.ForceMeshUpdate();
 			}
 			_richTextLength = RichTextLength(TargetTMPText.text);
-			if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 			switch (RevealMode)
 			{
 				case RevealModes.Character:

@@ -97,14 +97,14 @@ namespace MoreMountains.Feedbacks
 		[Header("Debug")]
 		/// the current, real time, time scale
 		[Tooltip("the current, real time, time scale")]
-		[MMReadOnly]
+		[MMFReadOnly]
 		public float CurrentTimeScale = 1f;
 		/// the time scale the system is lerping towards
 		[Tooltip("the time scale the system is lerping towards")]
-		[MMReadOnly]
+		[MMFReadOnly]
 		public float TargetTimeScale = 1f;
 		
-		[MMInspectorButton("TestButtonToSlowDownTime")]
+		[MMFInspectorButtonAttribute("TestButtonToSlowDownTime")]
 		/// a test button for the inspector
 		public bool TestButton;
 

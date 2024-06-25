@@ -162,7 +162,6 @@ namespace MoreMountains.Feedbacks
 			}
 			for (int i = 0; i < MaterialIndexes.Length; i++)
 			{
-				if (_coroutines[i] != null) { Owner.StopCoroutine(_coroutines[i]); }
 				_coroutines[i] = Owner.StartCoroutine(Flicker(BoundRenderer, i, _initialFlickerColors[i], FlickerColor, FlickerPeriod, FeedbackDuration));
 			}
 		}

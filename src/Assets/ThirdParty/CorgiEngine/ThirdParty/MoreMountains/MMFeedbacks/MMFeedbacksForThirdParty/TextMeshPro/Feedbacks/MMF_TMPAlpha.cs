@@ -135,7 +135,6 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(ChangeAlpha());
 					break;
 				case AlphaModes.ToDestination:
@@ -144,7 +143,6 @@ namespace MoreMountains.Feedbacks
 						return;
 					}
 					_initialAlpha = TargetTMPText.alpha;
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(ChangeAlpha());
 					break;
 			}

@@ -727,15 +727,6 @@ namespace MoreMountains.Feedbacks
 		{
 			base.OnValidate();
 			RandomizeTimes();
-			
-			if ((RandomSfx != null) && (RandomSfx.Length > 0))
-			{
-				_randomUniqueShuffleBag = new MMShufflebag<int>(RandomSfx.Length);
-				for (int i = 0; i < RandomSfx.Length; i++)
-				{
-					_randomUniqueShuffleBag.Add(i,1);
-				}
-			}
 		}
 
 		#endregion

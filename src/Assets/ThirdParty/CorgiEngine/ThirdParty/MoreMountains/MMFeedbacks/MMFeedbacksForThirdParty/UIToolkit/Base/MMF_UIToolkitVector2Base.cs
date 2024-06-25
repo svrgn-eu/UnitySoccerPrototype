@@ -142,7 +142,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(ChangeValue());
 					break;
 				case Modes.ToDestination:
@@ -151,7 +150,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 						return;
 					}
 					_initialValue = GetInitialValue();
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(ChangeValue());
 					break;
 			}

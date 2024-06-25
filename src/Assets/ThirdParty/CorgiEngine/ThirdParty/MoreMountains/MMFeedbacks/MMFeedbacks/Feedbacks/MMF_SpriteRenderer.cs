@@ -176,7 +176,6 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(SpriteRendererSequence());
 					break;
 				case Modes.ShakerEvent:
@@ -191,7 +190,6 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(SpriteRendererToDestinationSequence(false));
 					break;
 				case Modes.ToDestinationColorAndBack:
@@ -199,7 +197,6 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(SpriteRendererToDestinationSequence(true));
 					break;
 			}

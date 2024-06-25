@@ -40,8 +40,6 @@ namespace MoreMountains.Tools
 		private bool _requiresConstantRepaintOnlyWhenPlaying;
 		private MMMonoBehaviour _targetMonoBehaviourGameObject;
 		private bool _targetMonoBehaviourIsNotNull;
-		protected bool _shouldDrawBase = true;
-		protected string _targetTypeName;
 
 		public override bool RequiresConstantRepaint()
 		{
@@ -65,10 +63,8 @@ namespace MoreMountains.Tools
 				return;
 			}
 
-			_shouldDrawBase = true;
 			GroupData = new Dictionary<string, MMInspectorGroupData>();
 			PropertiesList = new List<SerializedProperty>();
-			_targetTypeName = target.GetType().Name;
 			
 			_targetMonoBehaviourGameObject = (MMMonoBehaviour)target;
 			if (_targetMonoBehaviourGameObject != null)
@@ -91,7 +87,6 @@ namespace MoreMountains.Tools
 				{
 					if (previousGroupAttribute != null && previousGroupAttribute.GroupAllFieldsUntilNextGroupAttribute)
 					{
-						_shouldDrawBase = false;
 						if (!GroupData.TryGetValue(previousGroupAttribute.GroupName, out groupData))
 						{
 							GroupData.Add(previousGroupAttribute.GroupName, new MMInspectorGroupData
@@ -174,23 +169,14 @@ namespace MoreMountains.Tools
 			
 			// Draw the script field
 			SerializedProperty scriptProperty = serializedObject.FindProperty("m_Script");
+			PropertyField scriptField = new PropertyField(scriptProperty);
+			scriptField.SetEnabled(false); 
+			root.Add(scriptField);
 
 			if (PropertiesList.Count == 0)
 			{
 				return root;
 			}
-
-			if (_shouldDrawBase)
-			{
-				VisualElement defaultInspector = new VisualElement();
-				InspectorElement.FillDefaultInspector(defaultInspector, serializedObject, this);
-				root.Add(defaultInspector);
-				return root;
-			}
-			
-			PropertyField scriptField = new PropertyField(scriptProperty);
-			scriptField.SetEnabled(false); 
-			root.Add(scriptField);
 
 			foreach (KeyValuePair<string, MMInspectorGroupData> pair in GroupData)
 			{
@@ -209,10 +195,11 @@ namespace MoreMountains.Tools
 			foldout.value = groupData.GroupIsOpen;
 			foldout.AddToClassList("mm-foldout");
 			foldout.style.borderLeftColor = groupData.GroupColor;
-			foldout.viewDataKey = target.name + "-" + _targetTypeName + groupData.GroupAttribute.GroupName;
+			foldout.viewDataKey = target.name + groupData.GroupAttribute.GroupName;
 			root.Add(foldout);
 			
-			var toggleElement = foldout.Q<Toggle>();
+			var toggleField = typeof(Foldout).GetField("m_Toggle", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			var toggleElement = (Toggle)toggleField.GetValue(foldout);
 			toggleElement.AddToClassList("mm-foldout-toggle");
 			
 			for (int i = 0; i < groupData.PropertiesList.Count; i++)

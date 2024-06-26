@@ -366,43 +366,173 @@ MonoBehaviour:
     m_ActionId: 6b5c4b16-7607-4f0a-ad5b-62efd798065d
     m_ActionName: 'PlayerControls/Run[/Keyboard/leftShift,/XInputControllerWindows/buttonWest]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 56a37787-c3be-4789-a219-0509391dc113
     m_ActionName: 'PlayerControls/Dash[/XInputControllerWindows/buttonNorth,/Keyboard/f]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5e6e408c-e79e-4f5c-87b7-8a6d181bd681
     m_ActionName: 'PlayerControls/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7016cc32-6ee0-4d53-b08c-02cbe6eb2c0e
     m_ActionName: 'PlayerControls/Shoot[/Keyboard/e,/Mouse/leftButton,/XInputControllerWindows/rightTrigger]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnSecondaryShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1b70a5ec-5da5-42ce-a7c0-8f54ff84052f
     m_ActionName: 'PlayerControls/SecondaryShoot[/Keyboard/leftAlt]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ae461515-11b0-4cc9-b221-92ed2df4118e
     m_ActionName: 'PlayerControls/Interact[/Keyboard/space,/XInputControllerWindows/buttonSouth]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cf90ff3a-006b-4ae6-9594-cc2189d6f5f0
     m_ActionName: 'PlayerControls/Reload[/Keyboard/r,/XInputControllerWindows/rightShoulder]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c01ffcc5-adff-4aa3-bb8d-e0139087e5ed
     m_ActionName: 'PlayerControls/Pause[/XInputControllerWindows/start,/Keyboard/escape]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnSwitchWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6e3febaf-dba5-4b43-b4f8-3b720e7ad1be
     m_ActionName: 'PlayerControls/SwitchWeapon[/XInputControllerWindows/leftShoulder,/Keyboard/t]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnSwitchCharacter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cde4a43f-3a08-47c8-afdf-2c5dca8d1241
     m_ActionName: 'PlayerControls/SwitchCharacter[/Keyboard/p]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 313462786}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.InputSystemManagerEventsBased,
+          MoreMountains.TopDownEngine.InputSystem
+        m_MethodName: OnTimeControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c71e92f2-77ca-4de6-98ad-64b961ed706e
     m_ActionName: 'PlayerControls/TimeControl[/Keyboard/k,/XInputControllerWindows/buttonEast]'
   - m_PersistentCalls:
@@ -1539,7 +1669,7 @@ MonoBehaviour:
   InputAuthorized: 1
   AnalogInput: 1
   ScriptDrivenInput: 0
-  WalkSpeed: 6
+  WalkSpeed: 1
   ShouldSetMovement: 1
   IdleThreshold: 0.05
   Acceleration: 10

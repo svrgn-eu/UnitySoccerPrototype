@@ -2,7 +2,9 @@
     "name": "Runtime",
     "rootNamespace": "Runtime",
     "references": [
-        "Base"
+        "Base",
+        "MoreMountains.TopDownEngine",
+        "MoreMountains.Tools"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

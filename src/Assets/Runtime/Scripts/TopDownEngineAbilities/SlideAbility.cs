@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
@@ -8,17 +8,16 @@ namespace Runtime.Scripts.TopDownEngineAbilities // you might want to use your o
     /// <summary>
     /// TODO_DESCRIPTION
     /// </summary>
-    [AddComponentMenu("TopDown Engine/Character/Abilities/DemoAbility")]
-    public class DemoAbility : CharacterAbility
+    [AddComponentMenu("TopDown Engine/Character/Abilities/SlideAbility")]
+    public class SlideAbility : CharacterAbility
     {
         /// This method is only used to display a helpbox text
         /// at the beginning of the ability's inspector
-        public override string HelpBoxText() { return "TODO_HELPBOX_TEXT."; }
+        public override string HelpBoxText() { return "This Ability is used by characters which shall be able to slide into an enemy."; }
 
-        [Header("TODO_HEADER")]
+        [Header("Specific Parameters")]
         /// declare your parameters here
-        public float randomParameter = 4f;
-        public bool randomBool;
+        //public GameObject Ball;
 
         protected const string _yourAbilityAnimationParameterName = "YourAnimationParameterName";
         protected int _yourAbilityAnimationParameter;
@@ -29,7 +28,6 @@ namespace Runtime.Scripts.TopDownEngineAbilities // you might want to use your o
         protected override void Initialization()
         {
             base.Initialization();
-            randomBool = false;
         }
 
         /// <summary>

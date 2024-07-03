@@ -18,9 +18,16 @@ namespace Runtime.Scripts.TopDownEngineAbilities // you might want to use your o
         [Header("Specific Parameters")]
         /// declare your parameters here
         public GameObject Ball;
+        public Collider2D PickupArea;
+        public Transform PlayerTransform;
+        public Vector2 BallOffset;
+        public CharacterOrientation2D CharacterOrientation;
 
         protected const string _yourAbilityAnimationParameterName = "YourAnimationParameterName";
         protected int _yourAbilityAnimationParameter;
+
+        private Collider2D ballCollider;
+        private int directionFactor = 1;
 
         /// <summary>
         /// Here you should initialize our parameters
@@ -28,6 +35,8 @@ namespace Runtime.Scripts.TopDownEngineAbilities // you might want to use your o
         protected override void Initialization()
         {
             base.Initialization();
+
+            this.ballCollider = this.Ball.GetComponent<Collider2D>();
         }
 
         /// <summary>
@@ -36,6 +45,36 @@ namespace Runtime.Scripts.TopDownEngineAbilities // you might want to use your o
         public override void ProcessAbility()
         {
             base.ProcessAbility();
+
+            if (this.PickupArea.IsTouching(this.ballCollider))
+            {
+                if ((!this._movement.CurrentState.Equals(CharacterStates.MovementStates.Dribbling)))
+                {
+                    // start dribbling
+                    this._movement.ChangeState(CharacterStates.MovementStates.Dribbling);
+                }
+                else
+                {
+                    // we're already dribbling
+                    // make sure the ball object is within the offset of the player object
+                    Transform ballTransform = this.Ball.GetComponent<Transform>();
+                    if (this.CharacterOrientation.CurrentFacingDirection.Equals(Character.FacingDirections.East))
+                    {
+                        // right
+                        this.directionFactor = 1;
+                    }
+                    else if (this.CharacterOrientation.CurrentFacingDirection.Equals(Character.FacingDirections.West))
+                    {
+                        //left
+                        this.directionFactor = -1;
+                    }
+                    ballTransform.position = this.PlayerTransform.position + new Vector3(this.BallOffset.x * directionFactor, this.BallOffset.y, 0);
+                }
+            }
+            else
+            {
+                this._movement.ChangeState(CharacterStates.MovementStates.Walking);
+            }
         }
 
         /// <summary>

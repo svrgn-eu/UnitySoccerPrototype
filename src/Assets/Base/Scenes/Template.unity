@@ -1020,11 +1020,11 @@ Transform:
   m_GameObject: {fileID: 386375621}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1858, z: 5}
+  m_LocalPosition: {x: 0, y: -0.069199994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 813015225}
+  m_Father: {fileID: 725457698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &386375623
 SpriteRenderer:
@@ -1411,7 +1411,11 @@ MonoBehaviour:
   BlockingMovementStates: 090000000b0000000c0000000d000000
   BlockingConditionStates: 020000000400000005000000
   BlockingWeaponStates: 
-  Ball: {fileID: 813015224}
+  Ball: {fileID: 725457697}
+  PickupArea: {fileID: 1480874240}
+  PlayerTransform: {fileID: 888096978}
+  BallOffset: {x: 0.25, y: -0.35}
+  CharacterOrientation: {fileID: 1962707382}
 --- !u!114 &644716525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1641,6 +1645,7 @@ GameObject:
   - component: {fileID: 725457698}
   - component: {fileID: 725457699}
   - component: {fileID: 725457700}
+  - component: {fileID: 725457701}
   m_Layer: 0
   m_Name: Ball_15x15px
   m_TagString: Untagged
@@ -1660,7 +1665,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.255, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 386375622}
   m_Father: {fileID: 813015225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &725457699
@@ -1707,7 +1713,7 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 2cdc7a26162a9ad40a4447ae00557700, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b590045a035104342a2ff09df969de8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1748,12 +1754,39 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.075
+--- !u!50 &725457701
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725457697}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &752176965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +2053,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 725457698}
-  - {fileID: 386375622}
   m_Father: {fileID: 1743432353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &827113403
@@ -2337,6 +2369,7 @@ Transform:
   - {fileID: 796029884}
   - {fileID: 1234022531}
   - {fileID: 1500766121}
+  - {fileID: 1480874239}
   m_Father: {fileID: 1126111623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &888096979
@@ -2892,6 +2925,75 @@ Transform:
   - {fileID: 257558529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480874238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480874239}
+  - component: {fileID: 1480874240}
+  m_Layer: 10
+  m_Name: BallPickupArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480874239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480874238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 888096978}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1480874240
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480874238}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.2}
+  m_Size: {x: 0.3, y: 0.3}
+  m_Direction: 0
 --- !u!1 &1500766120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,7 +3004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1500766121}
   m_Layer: 10
-  m_Name: Abilties
+  m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12796,7 +12898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 136.1011, y: 8.99987}
+  m_AnchoredPosition: {x: 136.1011, y: 8.999878}
   m_SizeDelta: {x: 30.291, y: 30.291}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224142290956187515
@@ -13883,7 +13985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 256, y: -27.999878}
+  m_AnchoredPosition: {x: 256, y: -27.999893}
   m_SizeDelta: {x: -522, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224744669921234371
@@ -14055,7 +14157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 133.5, y: 5.8}
+  m_AnchoredPosition: {x: 133.5, y: 5.800003}
   m_SizeDelta: {x: 30.291, y: 30.291}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224823103302437833

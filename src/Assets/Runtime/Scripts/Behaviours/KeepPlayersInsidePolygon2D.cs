@@ -1,3 +1,4 @@
+using MoreMountains.Tools;
 using Runtime.Assets.Runtime.Scripts.MigrateToHelpers;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +26,11 @@ namespace Base
         private void OnTriggerExit2D(Collider2D collider)
         {
             if (LayerMaskHelper.Contains(this.LayersToCheck, collider.gameObject.layer))
-            { 
+            {
                 //TODO: revert gameobject back into bounds
-                
+                // only reports a full exit of the object
+                Transform transform = collider.gameObject.transform;
+                MMDebug.DebugLogTime("Exited");
             }
         }
 

@@ -1,17 +1,16 @@
 [TOC]
 
 # Target
-This template is aimed towards providing a good entry point into a managed project featuring
-- efilnukefesin.NET base libs
-- unity base classes providing injected services
-- a set of preconfigured prefabs to use 
+This Prototype aims to simulate all of the components which made "Nintendo World Cup" such a fun game to play.
+
+Base technology is Unity with the MoreMountains Topdown Engine. 
+
+We aim to create a close, but not 1:1 rebuild of the mechanic here and certain changes are obvious and most likely wanted.
+
+This prototype is completed for around 20%.
 
 # Structure
 The basic structure of the template explained:
-- assets_src
-    - any source files for assets being used
-- docs
-    - put any documentation, image references etc here
 - src
     - Assets
         - Template
@@ -20,20 +19,14 @@ The basic structure of the template explained:
             - Builder Script for automating Unity Compilation Processes
             - Special Editors
             - Property Drawers
+            - (currently not referenced)
         - BaseEditor
+            - (currently not referenced)
         - Plugins
             - here you can find all dll files from the base libs, to be updated by the tool described in the tools section
-    
-- tools
-    - UpdateNugetPackages.bat
-        - will start the tool "BagetDownloader" which downloads the latest set of service dlls, unzip them into the project Plugins folder
-
-# Usage
-- Just copy the files to another directory, the project name will always be "src" anyway.
-- Update destination path in tools/UpdateNugetPackages.bat
-- call "git submodule update --init --recursive" in root folder
-- in Unity Editor, install the package "Cinemachine" and "Input System"
-- change Origin in Git config
-
-# Todo
-- Fix bug in Feature branch
+        - Runtime
+            - the Game Code itself
+        - ThirdParty
+            - all of the Third Party libs used for this project
+                - Moremountains Feel https://feel-docs.moremountains.com/
+                - Moremountains Topdown Engine https://topdown-engine-docs.moremountains.com/

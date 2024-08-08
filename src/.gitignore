@@ -265,7 +265,8 @@ PublishScripts/
 # NuGet Symbol Packages
 *.snupkg
 # The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
+# 20240808 don't ignore due to https://stackoverflow.com/questions/51598430/is-it-safe-to-ignore-the-packages-folder-in-unity-2018 and https://discussions.unity.com/t/gitlab-pipeline-unity-hub-wont-sign-in/933277/2
+#**/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed

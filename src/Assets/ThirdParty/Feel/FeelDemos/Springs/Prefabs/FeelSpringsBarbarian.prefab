@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a00a894837bd744b10fbeb03d1287b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetBool: 0
+  Target: {fileID: 0}
   TimeScaleMode: 1
   ChannelMode: 1
   Channel: 0
@@ -96,12 +96,22 @@ MonoBehaviour:
   FloatSpring:
     Damping: 0.4
     Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
+    ClampSettings:
+      ClampMin: 0
+      ClampMinValue: 0
+      ClampMinInitial: 0
+      ClampMinBounce: 0
+      ClampMax: 0
+      ClampMaxValue: 10
+      ClampMaxInitial: 0
+      ClampMaxBounce: 0
     SpringDebug:
       CurrentValue: 0
       TargetValue: 0
+    UnifiedSpring: 0
+    CurrentValueDisplay: 0
+    TargetValueDisplay: 0
+    VelocityDisplay: 0
   MoveToRandomValue: {x: -2, y: 2}
   BumpAmountRandomValue: {x: 20, y: 100}
   TestMoveToValue: 2
@@ -109,7 +119,6 @@ MonoBehaviour:
   TestBumpAmount: 75
   BumpToToolbar: 0
   OtherControlsToToolbar: 0
-  Target: {fileID: 0}
 --- !u!1 &254890610873914053
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +270,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     OnSkipToTheEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    OnInitializationComplete:
       m_PersistentCalls:
         m_Calls: []
     OnEnable:
@@ -507,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e08cd56fd2838f45bb3577428403529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetBool: 0
+  Target: {fileID: 0}
   TimeScaleMode: 1
   ChannelMode: 0
   Channel: 0
@@ -515,12 +527,22 @@ MonoBehaviour:
   FloatSpring:
     Damping: 0.1
     Frequency: 4
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
+    ClampSettings:
+      ClampMin: 0
+      ClampMinValue: 0
+      ClampMinInitial: 0
+      ClampMinBounce: 0
+      ClampMax: 0
+      ClampMaxValue: 10
+      ClampMaxInitial: 0
+      ClampMaxBounce: 0
     SpringDebug:
       CurrentValue: 0
       TargetValue: 0
+    UnifiedSpring: 0
+    CurrentValueDisplay: 0
+    TargetValueDisplay: 0
+    VelocityDisplay: 0
   MoveToRandomValue: {x: -2, y: 2}
   BumpAmountRandomValue: {x: 10, y: 20}
   TestMoveToValue: 2
@@ -528,7 +550,6 @@ MonoBehaviour:
   TestBumpAmount: -20
   BumpToToolbar: 0
   OtherControlsToToolbar: 0
-  Target: {fileID: 0}
   Axis: 3
 --- !u!114 &4147204758188181400
 MonoBehaviour:
@@ -542,50 +563,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcada72f36389ee498301db873e7cd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetBool: 0
+  Target: {fileID: 0}
   TimeScaleMode: 1
   ChannelMode: 0
   Channel: 0
   MMChannelDefinition: {fileID: 0}
-  SpringX:
-    Damping: 0.4
-    Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
-    SpringDebug:
-      CurrentValue: 0
-      TargetValue: 0
-  SpringY:
-    Damping: 0.4
-    Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
-    SpringDebug:
-      CurrentValue: 0
-      TargetValue: 0
-  SpringZ:
-    Damping: 0.4
-    Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
-    SpringDebug:
-      CurrentValue: 0
-      TargetValue: 0
-  MoveToRandomValueX: {x: -2, y: 2}
-  MoveToRandomValueY: {x: -2, y: 2}
-  MoveToRandomValueZ: {x: -2, y: 2}
-  BumpAmountRandomValueX: {x: 0, y: 0}
-  BumpAmountRandomValueY: {x: -20, y: 20}
-  BumpAmountRandomValueZ: {x: 0, y: 0}
+  SpringVector3:
+    SeparateAxis: 0
+    UnifiedSpring:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 1
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+    SpringX:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 0
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+    SpringY:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 0
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+    SpringZ:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 0
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+  MoveToRandomValueMin: {x: -2, y: -2, z: -2}
+  MoveToRandomValueMax: {x: 2, y: 2, z: 2}
+  BumpAmountRandomValueMin: {x: -20, y: 20, z: -20}
+  BumpAmountRandomValueMax: {x: 20, y: 20, z: 20}
   TestMoveToValue: {x: 2, y: 2, z: 2}
   MoveToToolbar: 0
   TestBumpAmount: {x: 75, y: 100, z: 50}
   BumpToToolbar: 0
   OtherControlsToToolbar: 0
-  Target: {fileID: 0}
   Space: 0
 --- !u!114 &763879633520640491
 MonoBehaviour:
@@ -599,50 +668,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e19943fc6c12249aa90e2f613265ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetBool: 0
+  Target: {fileID: 0}
   TimeScaleMode: 1
   ChannelMode: 0
   Channel: 0
   MMChannelDefinition: {fileID: 0}
-  SpringX:
-    Damping: 0.4
-    Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
-    SpringDebug:
-      CurrentValue: 0
-      TargetValue: 0
-  SpringY:
-    Damping: 0.4
-    Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
-    SpringDebug:
-      CurrentValue: 0
-      TargetValue: 0
-  SpringZ:
-    Damping: 0.4
-    Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
-    SpringDebug:
-      CurrentValue: 0
-      TargetValue: 0
-  MoveToRandomValueX: {x: -2, y: 2}
-  MoveToRandomValueY: {x: -2, y: 2}
-  MoveToRandomValueZ: {x: -2, y: 2}
-  BumpAmountRandomValueX: {x: 0, y: 0}
-  BumpAmountRandomValueY: {x: -2000, y: 2000}
-  BumpAmountRandomValueZ: {x: 0, y: 0}
+  SpringVector3:
+    SeparateAxis: 0
+    UnifiedSpring:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 1
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+    SpringX:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 0
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+    SpringY:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 0
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+    SpringZ:
+      Damping: 0.4
+      Frequency: 6
+      ClampSettings:
+        ClampMin: 0
+        ClampMinValue: 0
+        ClampMinInitial: 0
+        ClampMinBounce: 0
+        ClampMax: 0
+        ClampMaxValue: 10
+        ClampMaxInitial: 0
+        ClampMaxBounce: 0
+      SpringDebug:
+        CurrentValue: 0
+        TargetValue: 0
+      UnifiedSpring: 0
+      CurrentValueDisplay: 0
+      TargetValueDisplay: 0
+      VelocityDisplay: 0
+  MoveToRandomValueMin: {x: -2, y: -2, z: -2}
+  MoveToRandomValueMax: {x: 2, y: 2, z: 2}
+  BumpAmountRandomValueMin: {x: -20, y: 20, z: -20}
+  BumpAmountRandomValueMax: {x: 20, y: 20, z: 20}
   TestMoveToValue: {x: 2, y: 2, z: 2}
   MoveToToolbar: 0
   TestBumpAmount: {x: 75, y: 100, z: 50}
   BumpToToolbar: 0
   OtherControlsToToolbar: 0
-  Target: {fileID: 0}
   Space: 1
 --- !u!1 &1439932170198048796
 GameObject:
@@ -1421,8 +1538,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5244209524161266759}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.06, y: 0.5, z: -0.06}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1430,7 +1547,7 @@ Transform:
   - {fileID: 7665928146807215912}
   - {fileID: 8180635984569551132}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7429578384151552757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1769,7 +1886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e157e875e121b174d903add782257618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetBool: 0
+  Target: {fileID: 3884096725511753384}
   TimeScaleMode: 1
   ChannelMode: 1
   Channel: 0
@@ -1778,12 +1895,22 @@ MonoBehaviour:
   FloatSpring:
     Damping: 0.4
     Frequency: 6
-    CurrentValue: 0
-    TargetValue: 0
-    Velocity: 0
+    ClampSettings:
+      ClampMin: 0
+      ClampMinValue: 0
+      ClampMinInitial: 0
+      ClampMinBounce: 0
+      ClampMax: 0
+      ClampMaxValue: 10
+      ClampMaxInitial: 0
+      ClampMaxBounce: 0
     SpringDebug:
       CurrentValue: 0
       TargetValue: 0
+    UnifiedSpring: 0
+    CurrentValueDisplay: 0
+    TargetValueDisplay: 0
+    VelocityDisplay: 0
   MoveToRandomValue: {x: -2, y: 2}
   BumpAmountRandomValue: {x: 20, y: 100}
   TestMoveToValue: 2
@@ -1791,7 +1918,6 @@ MonoBehaviour:
   TestBumpAmount: 75
   BumpToToolbar: 0
   OtherControlsToToolbar: 0
-  Target: {fileID: 3884096725511753384}
 --- !u!1 &5290491763301312129
 GameObject:
   m_ObjectHideFlags: 0
